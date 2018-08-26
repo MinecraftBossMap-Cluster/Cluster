@@ -1,4 +1,7 @@
+#バニラデータパック無効化
+datapack disable vanilla
 
+#スコア追加
 scoreboard objectives add HP health
 scoreboard objectives add death deathCount
 scoreboard objectives add ID dummy
