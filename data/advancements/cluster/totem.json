@@ -1,0 +1,31 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:totem_of_undying"
+        },
+        "title": {
+            "text": "totem"
+        },
+        "description": {
+            "text": "used_totem"
+        },
+        "show_toast": false,
+        "hidden": true
+    },
+    "parent": "cluster:root",
+    "criteria": {
+        "totem": {
+            "trigger": "minecraft:used_totem",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:totem_of_undying"
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "cluster:item/totem"
+    }
+}
