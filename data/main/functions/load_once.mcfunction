@@ -31,7 +31,6 @@ scoreboard objectives add Logout minecraft.custom:minecraft.leave_game
 scoreboard objectives add tpPractice trigger
 scoreboard objectives add skillPractice trigger
 
-
 #ビジュアル
 scoreboard objectives setdisplay list HP
 
