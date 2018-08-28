@@ -1,16 +1,7 @@
-kill @e[type=area_effect_cloud,tag=item_root]
-summon area_effect_cloud 0 0 0 {Duration:1,Tags:["item_root"]}
-execute @e[type=area_effect_cloud,tag=item_root] ~ ~ ~ stats entity @s set SuccessCount @s function_cond
-scoreboard players add @e[type=area_effect_cloud,tag=item_root] function_cond 0
-
-execute @e[type=area_effect_cloud,tag=item_root] ~ ~ ~ testfor @a {Inventory:[{tag:{mparmor:true}}]}
-function cluster:item/armor/mp if @e[type=area_effect_cloud,tag=item_root,score_function_cond_min=1]
-execute @e[type=area_effect_cloud,tag=item_root] ~ ~ ~ testfor @a {Inventory:[{tag:{heartarmor:true}}]}
-function cluster:item/armor/heart if @e[type=area_effect_cloud,tag=item_root,score_function_cond_min=1]
-execute @e[type=area_effect_cloud,tag=item_root] ~ ~ ~ testfor @a {Inventory:[{tag:{powerarmor:true}}]}
-function cluster:item/armor/power if @e[type=area_effect_cloud,tag=item_root,score_function_cond_min=1]
-execute @e[type=area_effect_cloud,tag=item_root] ~ ~ ~ testfor @a {Inventory:[{tag:{resistarmor:true}}]}
-function cluster:item/armor/resist if @e[type=area_effect_cloud,tag=item_root,score_function_cond_min=1]
+execute if entity @a[nbt={Inventory:[{tag:{mparmor:true}}]}] run function item_manager:armor/mp
+execute if entity @a[nbt={Inventory:[{tag:{heartarmor:true}}]}] run function item_manager:armor/heart
+execute if entity @a[nbt={Inventory:[{tag:{powerarmor:true}}]}] run function item_manager:armor/power
+execute if entity @a[nbt={Inventory:[{tag:{resistarmor:true}}]}] run function item_manager:armor/resist
 
 
 execute @e[type=area_effect_cloud,tag=item_root] ~ ~ ~ testfor @a {ActiveEffects:[{Id:26b,Amplifier:63b}]}
