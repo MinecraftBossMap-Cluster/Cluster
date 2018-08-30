@@ -33,6 +33,8 @@ scoreboard objectives add tpPractice trigger
 scoreboard objectives add skillPractice trigger
 
 #アイテム関連
+scoreboard objectives add heartArmor dummy
+scoreboard objectives add heartArmorB dummy
 scoreboard objectives add mysteryPotion dummy
 
 #ビジュアル

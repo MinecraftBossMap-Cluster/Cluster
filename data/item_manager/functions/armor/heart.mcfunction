@@ -1,16 +1,16 @@
-scoreboard players set @a heartarmor 0
-scoreboard players add @a heartarmor 1 {Inventory:[{Slot:103b,id:"minecraft:chainmail_helmet",tag:{heartarmor:true}}]}
-scoreboard players add @a heartarmor 1 {Inventory:[{Slot:102b,id:"minecraft:chainmail_chestplate",tag:{heartarmor:true}}]}
-scoreboard players add @a heartarmor 1 {Inventory:[{Slot:101b,id:"minecraft:chainmail_leggings",tag:{heartarmor:true}}]}
-scoreboard players add @a heartarmor 1 {Inventory:[{Slot:100b,id:"minecraft:chainmail_boots",tag:{heartarmor:true}}]}
-execute @a ~ ~ ~ scoreboard players operation @p heartarmorB -= @p heartarmor
-effect @a[score_heartarmorB_min=1] 21 0
-effect @a[score_heartarmor_min=2,score_heartarmor=2,score_heartarmorB_min=1] 21 1000000 2 true
-effect @a[score_heartarmor_min=3,score_heartarmor=3,score_heartarmorB_min=1] 21 1000000 8 true
-effect @a[score_heartarmor_min=4,score_heartarmor=4,score_heartarmorB_min=1] 21 1000000 14 true
-effect @a[score_heartarmor_min=2,score_heartarmor=2,score_heartarmorB=-1] 21 1000000 2 true
-effect @a[score_heartarmor_min=3,score_heartarmor=3,score_heartarmorB=-1] 21 1000000 8 true
-effect @a[score_heartarmor_min=4,score_heartarmor=4,score_heartarmorB=-1] 21 1000000 14 true
-scoreboard players set @a heartarmorB 100 {ActiveEffects:[{Id:21b}]}
-scoreboard players set @a[score_heartarmor=1] heartarmorB 100
-execute @a[score_heartarmorB_min=100] ~ ~ ~ scoreboard players operation @s heartarmorB = @s heartarmor
+scoreboard players set @a heartArmor 0
+scoreboard players add @a[nbt={Inventory:[{Slot:103b,id:"minecraft:chainmail_helmet",tag:{heartarmor:true}}]}] heartArmor 1
+scoreboard players add @a[nbt={Inventory:[{Slot:102b,id:"minecraft:chainmail_chestplate",tag:{heartarmor:true}}]}] heartArmor 1
+scoreboard players add @a[nbt={Inventory:[{Slot:101b,id:"minecraft:chainmail_leggings",tag:{heartarmor:true}}]}] heartArmor 1
+scoreboard players add @a[nbt={Inventory:[{Slot:100b,id:"minecraft:chainmail_boots",tag:{heartarmor:true}}]}] heartArmor 1
+execute as @a run scoreboard players operation @s heartArmorB -= @s heartArmor
+effect clear @a[scores={heartArmorB=1..}] minecraft:health_boost
+effect give @a[scores={heartArmor=2,heartArmorB=1}] minecraft:health_boost 1000000 2 true
+effect give @a[scores={heartArmor=3,heartArmorB=1}] minecraft:health_boost 1000000 8 true
+effect give @a[scores={heartArmor=4,heartArmorB=1}] minecraft:health_boost 1000000 14 true
+effect give @a[scores={heartArmor=2,heartArmorB=-1}] minecraft:health_boost 1000000 2 true
+effect give @a[scores={heartArmor=3,heartArmorB=-1}] minecraft:health_boost 1000000 8 true
+effect give @a[scores={heartArmor=4,heartArmorB=-1}] minecraft:health_boost 1000000 14 true
+scoreboard players set @a[nbt={ActiveEffects:[{Id:21b}]}] heartArmorB 32
+scoreboard players set @a[scores={heartArmor=..1}] heartArmorB 32
+execute as @a[scores={heartArmorB=32..}] run scoreboard players operation @s heartArmorB = @s heartArmor
