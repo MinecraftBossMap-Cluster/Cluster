@@ -4,15 +4,15 @@
             "item": "minecraft:totem_of_undying"
         },
         "title": {
-            "text": "totem"
+            "text": "トーテム検知"
         },
         "description": {
-            "text": "used_totem"
+            "text": ""
         },
         "show_toast": false,
         "hidden": true
     },
-    "parent": "cluster:root",
+    "parent": "advancement_manager:root",
     "criteria": {
         "totem": {
             "trigger": "minecraft:used_totem",
@@ -26,6 +26,6 @@
         }
     },
     "rewards": {
-        "function": "cluster:item/totem"
+        "function": "item_manager:totem"
     }
 }

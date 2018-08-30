@@ -16,6 +16,7 @@ scoreboard objectives add skillCounter dummy
 scoreboard objectives add windAttack dummy
 scoreboard objectives add manaDrain dummy
 scoreboard objectives add healAttack dummy
+scoreboard objectives add regeneCount dummy
 
 #行動検知系統
 scoreboard objectives add damageDealt minecraft.custom:minecraft.damage_dealt
@@ -31,10 +32,14 @@ scoreboard objectives add Logout minecraft.custom:minecraft.leave_game
 scoreboard objectives add tpPractice trigger
 scoreboard objectives add skillPractice trigger
 
+#アイテム関連
+scoreboard objectives add mysteryPotion dummy
+
 #ビジュアル
 scoreboard objectives setdisplay list HP
 
 #定数定義
+scoreboard players set $7 Const 7
 scoreboard players set $65536 Const 65536
 
 #チーム

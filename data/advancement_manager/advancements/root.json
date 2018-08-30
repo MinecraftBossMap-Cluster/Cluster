@@ -12,8 +12,8 @@
         "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
     },
     "criteria": {
-        "impossible": {
-            "trigger": "minecraft:impossible"
+        "tick": {
+            "trigger": "minecraft:tick"
         }
     }
 }

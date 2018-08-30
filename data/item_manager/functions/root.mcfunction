@@ -4,18 +4,10 @@ execute if entity @a[nbt={Inventory:[{tag:{powerarmor:true}}]}] run function ite
 execute if entity @a[nbt={Inventory:[{tag:{resistarmor:true}}]}] run function item_manager:armor/resist
 
 
-execute @e[type=area_effect_cloud,tag=item_root] ~ ~ ~ testfor @a {ActiveEffects:[{Id:26b,Amplifier:63b}]}
-function cluster:item/potion/manarecov if @e[type=area_effect_cloud,tag=item_root,score_function_cond_min=1]
-execute @e[type=area_effect_cloud,tag=item_root] ~ ~ ~ testfor @a {ActiveEffects:[{Id:26b,Amplifier:64b}]}
-execute @p[tag=HealthRecov] ~ ~ ~ scoreboard players add @e[type=area_effect_cloud,tag=item_root] function_cond 1
-function cluster:item/potion/healthrecov if @e[type=area_effect_cloud,tag=item_root,score_function_cond_min=1]
-execute @e[type=area_effect_cloud,tag=item_root] ~ ~ ~ testfor @a {ActiveEffects:[{Id:26b,Amplifier:65b}]}
-function cluster:item/potion/debaffclear if @e[type=area_effect_cloud,tag=item_root,score_function_cond_min=1]
-execute @e[type=area_effect_cloud,tag=item_root] ~ ~ ~ testfor @a {ActiveEffects:[{Id:26b,Amplifier:66b}]}
-function cluster:item/potion/mysterypotion if @e[type=area_effect_cloud,tag=item_root,score_function_cond_min=1]
+execute if entity @a[nbt={ActiveEffects:[{Id:26b,Amplifier:63b}]}] run xp add @a[level=..99,nbt={ActiveEffects:[{Id:26b,Amplifier:63b}]}] -1 levels
+execute if entity @a[nbt={ActiveEffects:[{Id:26b,Amplifier:64b}]}] run function item_manager:potion/healthrecov
+execute if entity @a[nbt={ActiveEffects:[{Id:26b,Amplifier:65b}]}] run function item_manager:potion/debuffclear
+execute if entity @a[nbt={ActiveEffects:[{Id:26b,Amplifier:66b}]}] run function item_manager:potion/mysterypotion
 
-
-
-
-function cluster:item/regenecount if @a[score_RegenationCount_min=1]
+execute if entity @a[scores={regeneCount=1..}] run function item_manager:regenecount
 

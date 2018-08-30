@@ -1,4 +1,4 @@
-scoreboard players set @s RegenationCount 20
-xp -2147483647L @s
-xp 100L @s
-advancement revoke @s only cluster:totem
+scoreboard players set @s regeneCount 20
+xp add @s -2147483647 levels
+xp add @s 100 levels
+advancement revoke @s only advancement_manager:system/totem
