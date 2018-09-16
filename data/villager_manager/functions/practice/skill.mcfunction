@@ -1,3 +1,3 @@
-tellraw @a[score_tpPractice_min=2] [{"text":"[案内人] 試すスキルはどれにする?\n･"},{"text":"近接スキル!\n","color":"green","clickEvent":{"action":"run_command","value":"/trigger skillPractice set 1"}},{"text":"･","color":"white"},{"text":"弓スキル!\n","color":"green","clickEvent":{"action":"run_command","value":"/trigger skillPractice set 2"}},{"text":"･","color":"white"},{"text":"魔法スキル!","color":"green","clickEvent":{"action":"run_command","value":"/trigger skillPractice set 3"}}]
-scoreboard players enable @a[score_tpPractice_min=2] skillPractice
-scoreboard players reset @a[score_tpPractice_min=2] tpPractice
+tellraw @a[scores={tpPractice=2..}] [{"text":"[案内人] 試すスキルはどれにする?\n･"},{"text":"近接スキル!\n","color":"green","clickEvent":{"action":"run_command","value":"/trigger skillPractice set 1"}},{"text":"･","color":"white"},{"text":"弓スキル!\n","color":"green","clickEvent":{"action":"run_command","value":"/trigger skillPractice set 2"}},{"text":"･","color":"white"},{"text":"魔法スキル!","color":"green","clickEvent":{"action":"run_command","value":"/trigger skillPractice set 3"}}]
+scoreboard players enable @a[scores={tpPractice=2..}] skillPractice
+scoreboard players reset @a[scores={tpPractice=2..}] tpPractice
